@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 10; // Максимальное здоровье
+    public int maxHealth = 10;
     private int currentHealth;
 
     void Start()
     {
-        currentHealth = maxHealth; // Устанавливаем начальное здоровье
+        currentHealth = maxHealth;
     }
 
-    // Метод для получения урона
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -21,16 +20,13 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die(); // Если здоровье закончилось, вызываем метод Die
+            Die();
         }
     }
 
-    // Метод для обработки смерти игрока
     void Die()
     {
         Debug.Log("Player Died!");
-        // Здесь можно добавить логику завершения игры, например:
-        // SceneManager.LoadScene("GameOverScene");
-        Destroy(gameObject); // Уничтожаем объект игрока
+        Destroy(gameObject);
     }
 }
